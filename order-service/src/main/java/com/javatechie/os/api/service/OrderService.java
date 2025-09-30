@@ -1,5 +1,7 @@
 package com.javatechie.os.api.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -30,5 +32,10 @@ public class OrderService {
 		response = paymentResponse.getPaymentStatus().equals("success")?"payment processing successful and ordered placed":"there is a failure in payment api, order added to cart";
 		repository.save(order);
 		return new TransactionResponse(order, paymentResponse.getAmount(), paymentResponse.getTransactionId(), response);
+	}
+
+	public List<Order> getbookOrders() {
+		// TODO Auto-generated method stub
+		return repository.findAll();
 	}
 }

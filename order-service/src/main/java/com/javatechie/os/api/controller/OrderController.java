@@ -1,6 +1,9 @@
 package com.javatechie.os.api.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,5 +24,10 @@ public class OrderController {
 	@PostMapping("/bookOrder")
 	public TransactionResponse bookOrder(@RequestBody TransactionRequest request) {
 		return service.saveOrder(request);
+	}
+	
+	@GetMapping("/get")
+	public List<Order> getbookOrders() {
+		return service.getbookOrders();
 	}
 }                                                                 
