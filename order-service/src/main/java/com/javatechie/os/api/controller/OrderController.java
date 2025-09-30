@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.javatechie.os.api.common.TransactionRequest;
+import com.javatechie.os.api.common.TransactionResponse;
 import com.javatechie.os.api.entity.Order;
 import com.javatechie.os.api.service.OrderService;
 
@@ -17,7 +19,7 @@ public class OrderController {
 	private OrderService service;
 	
 	@PostMapping("/bookOrder")
-	public Order bookOrder(@RequestBody Order order) {
-		return service.saveOrder(order);
+	public TransactionResponse bookOrder(@RequestBody TransactionRequest request) {
+		return service.saveOrder(request);
 	}
 }                                                                 
