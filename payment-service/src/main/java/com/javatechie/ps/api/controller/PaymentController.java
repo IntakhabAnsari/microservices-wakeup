@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.javatechie.ps.api.entity.Payment;
 import com.javatechie.ps.api.service.PaymentService;
 
-import lombok.experimental.PackagePrivate;
-
 @RestController
 @RequestMapping("/payment")
 public class PaymentController {
